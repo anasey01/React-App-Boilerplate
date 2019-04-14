@@ -1,3 +1,10 @@
-import path from 'path';
+import React from 'react';
+import ReactDom from 'react-dom';
+import App from './App';
 
-console.log("The current path is", path.resolve(__dirname));
+ReactDom.render(
+    <App/>,
+    document.getElementById('app'),
+);
+
+module.hot.accept();
