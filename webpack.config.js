@@ -8,5 +8,17 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
+  },
+  module: {
+    rules: [
+      {
+        test:/\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx']
   }
 };
