@@ -1,1 +1,3 @@
-console.log('BOOM!!!!! REACT APP BOILERPLATE BABY!');
+import path from 'path';
+
+console.log("The current path is", path.resolve(__dirname));
