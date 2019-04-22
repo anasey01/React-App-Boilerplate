@@ -16,7 +16,6 @@ var router = _express["default"].Router();
 router.get('*', function (request, response) {
   var bundled = _path["default"].join(__dirname, '..', 'dist', 'index.html');
 
-  console.log('bundled file is ', bundled);
   response.sendFile(bundled);
 });
 var _default = router;

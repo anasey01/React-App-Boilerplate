@@ -1,20 +1,14 @@
 const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
 require('@babel/polyfill');
 
 module.exports = {
-  mode: 'development',
   entry: ['@babel/polyfill', './src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: './bundle.js',
-  },
-  devServer: {
-    contentBase: '/src',
-    hot: true,
-    compress: true,
-    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -42,9 +36,10 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebPackPlugin({
+    new HtmlWebpackPlugin({
       hash: true,
       template: './src/index.html',
     }),
+    new CleanWebpackPlugin(),
   ]
 };
