@@ -1,5 +1,15 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import App from './App';
+import { Provider } from 'react-redux';
+import Route from './routes/index';
+import configureStore from './redux/store/createStore';
+import preloadedState from './redux/reducers/initialStates';
 
-ReactDom.render(<App />, document.getElementById('app'));
+const store = configureStore(preloadedState);
+
+ReactDom.render(
+  <Provider store={store}>
+    <Route />
+  </Provider>,
+  document.getElementById('app')
+);
