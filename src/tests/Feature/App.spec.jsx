@@ -1,10 +1,10 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from '../../App';
+import HomePage from '../../components/Home/Home';
 
 describe('First React component test with Enzyme', () => {
   it('renders without crashing', () => {
-    shallow(<App />);
+    shallow(<HomePage />);
   });
 });

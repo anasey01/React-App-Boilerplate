@@ -6,7 +6,8 @@
     "!src/index.js",
     "!<rootDir>/node_modules/",
     "!src/tests/__mocks__/",
-    "!src/**/index.js"
+    "!src/**/index.js",
+    "!src/redux/store/**"
   ],
 
   "coverageDirectory": "coverage",
