@@ -61,7 +61,6 @@
     "prod": "npm run production",
     "production": "npm run start",
     "format": "prettier --write \"src/**/*.jsx\"",
-    "precommit": "lint-staged && npm test",
     "test": "jest --config ./jest.config.json --coverage --colors"
   },
   "lint-staged": {
@@ -80,5 +79,10 @@
   "bugs": {
     "url": "https://github.com/anasey01/React-App-Boilerplate/issues"
   },
-  "homepage": "https://github.com/anasey01/React-App-Boilerplate#readme"
+  "homepage": "https://github.com/anasey01/React-App-Boilerplate#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm test"
+    }
+  }
 }
